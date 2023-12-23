@@ -1,0 +1,19 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @player %>
+
+<div data-reflex-permanent>
+  <iframe src="https://ghbtns.com/github-btn.html?user=stimulusreflex&repo=stimulus_reflex&type=star&count=true" frameborder="0" scrolling="0" class="ghbtn"></iframe>
+  <iframe src="https://ghbtns.com/github-btn.html?user=stimulusreflex&repo=stimulus_reflex&type=fork&count=true" frameborder="0" scrolling="0" class="ghbtn"></iframe>
+</div>
+
+<header data-reflex="click->Example#change_player_message">
+  <%= render partial: "selector_morph_example", locals: { message: "Am I the medium or the massage?" } %>
+</header>
+
+<div>
+  <%= link_to "Edit this player", edit_player_path(@player) %> |
+  <%= link_to "Back to players", players_path %>
+
+  <%= button_to "Destroy this player", @player, method: :delete %>
+</div>

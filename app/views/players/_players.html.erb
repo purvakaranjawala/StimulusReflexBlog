@@ -1,0 +1,15 @@
+<tbody id="players-list">
+  <% players.each do |player| %>
+    <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+      <td><%= check_box_tag nil, nil, player.joined_at, data: {reflex: "click->ExampleReflex#toggle", id: player.id} %></td>
+      <td class="py-4 px-6"><%= player.name %></td>
+      <td class="py-4 px-6"><%= player.age %></td>
+      <td class="py-4 px-6"><%= player.contact %></td>
+      <td class="py-4 px-6"><%= player.bio %></td>
+      <td class="py-4 px-6"><%= player.joined_at %></td>
+      <td class="py-4 px-6"><%= link_to 'Show', player %></td>
+      <td class="py-4 px-6"><%= link_to 'Edit', edit_player_path(player) %></td>
+      <td class="py-4 px-6"><%= link_to 'Destroy', player, data: { turbo_method: :delete } %></td>
+    </tr>
+  <% end %>
+</tbody>
